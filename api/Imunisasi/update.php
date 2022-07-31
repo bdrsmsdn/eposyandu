@@ -25,10 +25,7 @@
         $imunisasi->tgl_imunisasi = $data['tgl_imunisasi'];
         $imunisasi->usia_saat_vaksin = $data['usia_saat_vaksin'];
         $imunisasi->tinggi_badan = $data['tinggi_badan'];
-        $imunisasi->berat_badan_umur = $data['berat_badan_umur'];
-        $imunisasi->berat_badan_berdiri = $data['berat_badan_berdiri'];
-        $imunisasi->berat_badan_terlentang = $data['berat_badan_terlentang'];
-        $imunisasi->periode = $data['periode'];
+        $imunisasi->berat_badan = $data['berat_badan'];
         $imunisasi->nama_anak = $data['nama_anak'];
         $imunisasi->nama_petugas = $data['nama_petugas'];
         $imunisasi->nama_vaksin = $data['nama_vaksin'];

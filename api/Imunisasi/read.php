@@ -47,13 +47,10 @@ include_once '../objects/imunisasi.php';
 					"tgl_imunisasi"=>$tgl_imunisasi,
 					"usia_saat_vaksin"=>$usia_saat_vaksin,
 					"tinggi_badan"=>$tinggi_badan,
-					"berat_badan_umur"=>$berat_badan_umur,
-					"berat_badan_berdiri"=>$berat_badan_berdiri,
-					"berat_badan_terlentang"=>$berat_badan_terlentang,
-					"periode"=>$periode,
+					"berat_badan"=>$berat_badan,
 					"nama_anak"=>$nama_anak,
 					"nama_petugas"=>$nama_petugas,
-					"nama_vaksin"=>$id_vaksin,
+					"nama_vaksin"=>$nama_vaksin,
 					"nama_ibu"=>$nama_ibu
 			);
 			array_push($imun_arr["records"], $imun);

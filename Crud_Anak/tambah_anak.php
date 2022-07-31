@@ -46,7 +46,7 @@
 
             <div class="form-group"> 
                 <label for="usia_anak" id="label">Usia Anak</label>
-                <input type="text" class="form-control" id="usia_anak" disabled>
+                <input type="text" class="form-control" id="usia_anak" >
             </div>
             <div class="row">
                 <label class="col-form-label col-sm-4 " id="label">Jenis Kelamin</label>

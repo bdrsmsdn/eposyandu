@@ -46,7 +46,7 @@
 
 		<div class="form-group row">
 			<button type="button" onclick="window.location.href='crudIbu.php'" class="btn btn-success col-form">KEMBALI</a></button>
-			<button id="ttambah" type="button" class="btn btn-success col-form">TAMBAH</button>
+			<button id="bttambah" type="button" class="btn btn-success col-form">TAMBAH</button>
 			<span id="status"style="padding-left: 15px;"></span>
 		</div>
 	</form>
@@ -63,34 +63,34 @@
 		var no_telp_ibu;
 		var ibu;
 		$(document).ready(function(){
-		$("#ttambah").click(function(){ 
-			$("#status").html("lagi diproses");
-			$("#ttambah").prop("disabled", true);
+
+
+		$("#bttambah").click(function(){ 
+			 $("#status").html("lagi diproses");
+			 $("#bttambah").prop("disabled", true);
 				nik_ibu = $("#nik_ibu").val(); 
-				
-				
 				nama_ibu = $("#nama_ibu").val(); 
 				alamat_ibu = $("#alamat_ibu").val(); 
 				no_telp_ibu = $("#no_telp_ibu").val(); 
-				ibu = "&nik_ibu="+nik_ibu + "&nama_ibu="+nama_ibu+"&alamat_ibu="+alamat_ibu+"&no_telp_ibu="+no_telp_ibu;
+				// ibu = "&nik_ibu="+nik_ibu + "&nama_ibu="+nama_ibu+"&alamat_ibu="+alamat_ibu+"&no_telp_ibu="+no_telp_ibu;
 				
-				if (nik_ibu == "" || nama_ibu == "" || alamat_ibu == "" || no_telp_ibu == ""){
-					alert("Data Tidak Lengkap");
-					$("#status").html("");
-					$("#ttambah").prop("disabled", false);
-				}
-
 				ibu = {
 					"nama_ibu" : nama_ibu,
 					"nik_ibu" : nik_ibu,
 					"alamat_ibu" : alamat_ibu,
 					"no_telp_ibu" : no_telp_ibu		
 				};
-				
+
+				if (nik_ibu == "" || nama_ibu == "" || alamat_ibu == "" || no_telp_ibu == ""){
+					alert("Data Tidak Lengkap");
+					$("#status").html("");
+					$("#bttambah").prop("disabled", false);
+				}
+
 				$("#loading").show(); 
 				$.ajax({ 
 					type : "POST",
-					url: "api/Ibu/create.php", 
+					url: "../api/Ibu/create.php", 
 					data: {ibu : ibu, func_ibu : "tambah_data_ibu"},
 					cache: false, 
 					success: function(msg){ 

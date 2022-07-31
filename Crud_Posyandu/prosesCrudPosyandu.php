@@ -38,14 +38,14 @@
 
    } else if($func_posyandu == "tambah_data_posyandu"){
         $data = $_POST['posyandu'];   
-        $nama_posyandu = $data['nama_posyandu'];
+        $nama_posyandu = htmlspecialchars($data['nama_posyandu']);
         $alamat_posyandu = htmlspecialchars($data['alamat_posyandu']);
         $kel_posyandu = htmlspecialchars($data['kel_posyandu']);
         $kec_posyandu = htmlspecialchars($data['kec_posyandu']);
         $kota_kab_posyandu = htmlspecialchars($data['kota_kab_posyandu']);
 
-        $tambah = mysqli_query($conn, "INSERT INTO ref_posyandu(id_posyandu, nama_posyandu, alamat_posyandu, kel_posyandu, kec_posyandu, kota_kab_posyandu) 
-                        VALUES('', '$nama_posyandu','$alamat_posyandu','$kel_posyandu','$kec_posyandu', '$kota_kab_posyandu')");
+        $tambah = mysqli_query($conn, "INSERT INTO ref_posyandu(nama_posyandu, alamat_posyandu, kel_posyandu, kec_posyandu, kota_kab_posyandu) 
+                        VALUES('$nama_posyandu','$alamat_posyandu','$kel_posyandu','$kec_posyandu', '$kota_kab_posyandu')");
         
         if($tambah){
             echo "sukses";

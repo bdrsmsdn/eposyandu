@@ -70,6 +70,7 @@
     			kec_posyandu = $("#kec_posyandu").val();
     			kota_kab_posyandu = $("#kota_kab_posyandu").val();
     			//data = "&nama_posyandu="+nama_posyandu+"&alamat_posyandu="+alamat_posyandu+"&kel_posyandu="+kel_posyandu+"&kec_posyandu="+kec_posyandu+"&kota_kab_posyandu="+kota_kab_posyandu;
+				
 				posyandu = {
 					"nama_posyandu" : nama_posyandu,
 					"alamat_posyandu" : alamat_posyandu,

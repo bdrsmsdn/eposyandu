@@ -48,7 +48,7 @@
             
             $anak->id_ibu = isset($data['id_ibu']) ? $data['id_ibu'] : "";
         
-             // create the imunisasi
+             // create the anak
             if($anak->create()){
         
                 // set response code - 201 created

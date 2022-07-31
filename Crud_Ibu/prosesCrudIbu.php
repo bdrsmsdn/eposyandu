@@ -42,8 +42,8 @@
         $alamat_ibu = htmlspecialchars($data['alamat_ibu']);
         $telp_ibu = htmlspecialchars($data['telp_ibu']);
         
-        $tambah = mysqli_query($conn, "INSERT INTO ref_ibu(id_ibu, nama_ibu, nik_ibu, alamat_ibu, no_telp_ibu) 
-                        VALUES('', '$nama_ibu','$nik_ibu','$alamat_ibu','$telp_ibu')");
+        $tambah = mysqli_query($conn, "INSERT INTO ref_ibu(nama_ibu, nik_ibu, alamat_ibu, no_telp_ibu) 
+                        VALUES('$nama_ibu','$nik_ibu','$alamat_ibu','$telp_ibu')");
         
         if($tambah){
             echo "sukses";

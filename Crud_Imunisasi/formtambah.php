@@ -46,18 +46,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="berat_badan" id="label">Berat badan (Umur)</label>
-				<input type="text" class="form-control" id="berat_badan_umur">
-			</div>
-
-			<div class="form-group">
-				<label for="berat_badan" id="label">Berat badan (Berdiri)</label>
-				<input type="text" class="form-control" id="berat_badan_berdiri">
-			</div>
-
-			<div class="form-group">
-				<label for="berat_badan" id="label">Berat badan (Terlentang)</label>
-				<input type="text" class="form-control" id="berat_badan_terlentang">
+				<label for="berat_badan" id="label">Berat badan</label>
+				<input type="text" class="form-control" id="berat_badan">
 			</div>
 
 			<!-- <div class="form-group">
@@ -122,9 +112,7 @@
 		var tgl_imunisasi;
 		var usia_saat_vaksin;
 		var tinggi_badan;
-		var berat_badan_umur;
-		var berat_badan_berdiri;
-		var berat_badan_terlentang;
+		var berat_badan;
 		var periode;
 		var nama_anak;
 		var nama_ibu;
@@ -160,47 +148,8 @@
 				nama_ibu = $(this).children("option:selected").val();
 			});
 
-			$("#periode").change(function(){
-				periode = $(this).children("option:selected").val();
-
-				switch(periode){
-					case "0-7 hari":
-						nama_vaksin = "HB";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "1 bulan":
-						nama_vaksin = "BCG + Polio 1";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "2 bulan":
-						nama_vaksin = "DPT 1 + Polio 2";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "3 bulan":
-						nama_vaksin = "DPT 2 + Polio 3";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "4 bulan":
-						nama_vaksin = "DPT 3 + Polio 4";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "5 bulan":
-						nama_vaksin = "IPV";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "9 bulan":
-						nama_vaksin = "MR";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "18 bulan":
-						nama_vaksin = "DPT 4 (Lanjutan)";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-					case "2 tahun":
-						nama_vaksin = "MR 2";
-						$("#nama_vaksin").val(nama_vaksin);
-						break;
-				}
+			$("#nama_vaksin").change(function(){
+				nama_nama = $(this).children("option:selected").val();
 			});
 			
 
@@ -211,26 +160,21 @@
 				tgl_imunisasi = $("#tgl_imunisasi").val();
     			usia_saat_vaksin = $("#usia_saat_vaksin").val();
     			tinggi_badan = $("#tinggi_badan").val();
-    			berat_badan_umur = $("#berat_badan_umur").val();
-    			berat_badan_berdiri = $("#berat_badan_berdiri").val();
-    			berat_badan_terlentang = $("#berat_badan_terlentang").val();
+    			berat_badan = $("#berat_badan").val();
     			nama_vaksin = $("#nama_vaksin").val();
     			//data = "&tgl_imunisasi="+tgl_imunisasi+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
 				imunisasi = {
 					"tgl_imunisasi" : tgl_imunisasi,
 					"usia_saat_vaksin" : usia_saat_vaksin,
 					"tinggi_badan" : tinggi_badan,
-					"berat_badan_umur" : berat_badan_umur,
-					"berat_badan_berdiri" : berat_badan_berdiri,
-					"berat_badan_terlentang" : berat_badan_terlentang,
-					"periode" : periode,
+					"berat_badan" : berat_badan,
 					"nama_anak" : nama_anak,
 					"nama_petugas" : nama_petugas,
 					"nama_vaksin" : nama_vaksin,
 					"nama_ibu" : nama_ibu
 				};	
 
-				if (tgl_imunisasi == "" || usia_saat_vaksin == "" || tinggi_badan == "" || berat_badan_umur == "" || berat_badan_berdiri == "" || berat_badan_terlentang == "" || periode == "" || nama_anak == "" || nama_ibu == ""){
+				if (tgl_imunisasi == "" || usia_saat_vaksin == "" || tinggi_badan == "" || berat_badan == "" || nama_anak == "" || nama_ibu == ""){
 					alert("Data Tidak Lengkap");
 					$("#status").html("");
 					$("#ttambah").prop("disabled", false);

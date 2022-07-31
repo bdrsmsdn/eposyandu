@@ -68,10 +68,7 @@
             <th class="align-middle">Nama Ibu</th>
             <th class="align-middle">Usia saat Vaksin</th>
             <th class="align-middle">Tinggi Badan</th>
-            <th class="align-middle">Berat Badan (Umur)</th>
-            <th class="align-middle">Berat Badan (Berdiri)</th>
-            <th class="align-middle">Berat Badan (Terlentang)</th>
-            <th class="align-middle">Periode</th>
+            <th class="align-middle">Berat Badan</th>
             <th class="align-middle">Nama Petugas</th>
             <th class="align-middle">Nama Vaksin</th>
             <th colspan=2 style="text-align: center;" class="align-middle">Aksi</th>
@@ -129,10 +126,7 @@
               "<td>"+element.nama_ibu+"</td>" +
               "<td>"+element.usia_saat_vaksin+" bulan</td>"+
               "<td>"+element.tinggi_badan+" cm</td>" +
-              "<td>"+element.berat_badan_umur+" kg</td>" +
-              "<td>"+element.berat_badan_berdiri+" kg</td>" +
-              "<td>"+element.berat_badan_terlentang+" kg</td>" +
-              "<td>"+element.periode+"</td>" +
+              "<td>"+element.berat_badan+" kg</td>" +
               "<td>"+element.nama_petugas+"</td>" +
               "<td>"+element.nama_vaksin+"</td>" +
               '<td><button onclick="window.location.href=\'formedit.php?id_imunisasi='+ element.id_imunisasi +'\'" class="btn btn-info" style="padding: 0px 10px 0px 10px;">EDIT</button></td>' +

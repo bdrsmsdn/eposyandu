@@ -92,8 +92,8 @@
         Status Petugas :<br>
         <input type="text" id="status_petugas"><p> -->
         <div class="form-group row">
-        <button onclick="window.location.href='Crud_Petugas/crudpetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
-        <button type="button" id="ttambah" class="btn btn-success col-form">TAMBAH</button>
+        <button onclick="window.location.href='crudpetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
+        <button type="button" id="bttambah" class="btn btn-success col-form">TAMBAH</button>
         <span id="status"></span>
     </div>
 </fieldset>
@@ -109,9 +109,11 @@
         var status_petugas;
 		var petugas;
 		$(document).ready(function(){
-			$("#ttambah").click(function(){ 
+            
+			$("#bttambah").click(function(){ 
                 $("#status").html("lagi diproses");
-				$$("#ttambah").prop("disabled", true);
+				$$("#bttambah").prop("disabled", true);
+                
 				//ambil nilai-nilai dari masing-masing input 
 				nama_petugas = $("#nama_petugas").val();
     			jabatan_petugas = $("#jabatan_petugas").val();
@@ -121,7 +123,6 @@
     			no_telp_petugas = $("#no_telp_petugas").val();
     			status_petugas = $("#status_petugas").val();
 
-    			//data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
 				petugas = {
 					"nama_petugas" : nama_petugas,
 					"jabatan_petugas" : jabatan_petugas,
@@ -131,12 +132,12 @@
                     "alamat_petugas" : alamat_petugas,
                     "no_telp_petugas" : no_telp_petugas,
                     "status_petugas" : status_petugas
-				};	
+				};	                
 
 				if (nama_petugas == "" || jabatan_petugas == "" || jk_petugas == "" || tempat_lahir_petugas == "" || tgl_lahir_petugas == "" || alamat_petugas == "" || no_telp_petugas == "" || status_petugas == ""){
 					alert("Data Tidak Lengkap");
 					$("#status").html("");
-                    $("#ttambah").prop("disabled", false);
+                    $("#bttambah").prop("disabled", false);
 				}
     			
     			$("#loading").show();

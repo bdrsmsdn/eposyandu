@@ -55,7 +55,7 @@
 			
 			// query to insert record
 			$query = "INSERT INTO
-						" . $this->table_nama . " VALUES ('$this->id_timbang','$this->nama_anak', '$this->berat_badan', '$this->tinggi_badan', '". date('Y-m-d'). "')";
+						" . $this->table_nama . " VALUES ('$this->nama_anak', '$this->berat_badan', '$this->tinggi_badan', '". date('Y-m-d'). "')";
 			$stmt = $this->conn->prepare($query);
 			if($stmt->execute()){
 				return true;

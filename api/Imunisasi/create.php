@@ -33,6 +33,14 @@
             }
         }
     
+        else if ($func_imunisasi == "ambil_option_vaksin"){
+            $option = $db->query("SELECT id_vaksin, nama_vaksin FROM ref_vaksin");
+            echo "<option> PILIH NAMA VAKSIN </option>\n";
+            while ($row = $option->fetch(PDO::FETCH_ASSOC)){
+                echo "<option value='". $row['id_vaksin']. "'>". $row['nama_vaksin'] . "</option>\n";
+            }
+        }
+        
         else if ($func_imunisasi == "ambil_option_petugas"){
             $option = $db->query("SELECT id_petugas, nama_petugas FROM ref_petugas");
             echo "<option> PILIH NAMA PETUGAS </option>\n";
@@ -51,24 +59,18 @@
             !empty($data['tgl_imunisasi']) &&
             !empty($data['usia_saat_vaksin']) &&
             !empty($data['tinggi_badan']) && 
-            !empty($data['berat_badan_umur'])&&
-            !empty($data['berat_badan_berdiri'])&&
-            !empty($data['berat_badan_terlentang'])&&
-            !empty($data['periode'])
+            !empty($data['berat_badan'])
         ){
         
             // set product property values
             $imunisasi->tgl_imunisasi = $data['tgl_imunisasi'];
             $imunisasi->usia_saat_vaksin = $data['usia_saat_vaksin'];
             $imunisasi->tinggi_badan = $data['tinggi_badan'];
-            $imunisasi->berat_badan_umur = $data['berat_badan_umur'];
-            $imunisasi->berat_badan_berdiri = $data['berat_badan_berdiri'];
-            $imunisasi->berat_badan_terlentang = $data['berat_badan_terlentang'];
-            $imunisasi->periode = isset($data['periode']) ? $data['periode'] : "";
+            $imunisasi->berat_badan = $data['berat_badan'];
             $imunisasi->nama_anak = isset($data['nama_anak']) ? $data['nama_anak'] : "";
             $imunisasi->nama_petugas = isset($data['nama_petugas']) ? $data['nama_petugas'] : "";
             $imunisasi->nama_ibu = isset($data['nama_ibu']) ? $data['nama_ibu'] : "";
-            $imunisasi->nama_vaksin = $data['nama_vaksin'];
+            $imunisasi->nama_vaksin = isset($data['nama_vaksin']) ? $data['nama_vaksin'] : "";
             
         
             // create the imunisasi
