@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 02:39 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Jul 31, 2022 at 06:16 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,12 +43,15 @@ CREATE TABLE `ref_anak` (
 --
 
 INSERT INTO `ref_anak` (`id_anak`, `nama_anak`, `nik_anak`, `tempat_lahir_anak`, `tgl_lahir_anak`, `usia_anak`, `jk_anak`, `id_ibu`) VALUES
-(1, 'Kevin Trestu', '3789322983879004', 'Bandung', '2021-02-10', 2, 'L', 4),
+(1, 'Cinta', '3789322983879004', 'Bandung ', '2021-02-10', 2, 'L', 4),
 (3, 'Daffa Aqila', '3782118902922901', 'Jakarta', '2021-03-01', 1, 'L', 5),
 (4, 'Hendriyan ', '12345678998675', 'Garut', '2017-02-25', 4, 'L', 6),
-(5, 'Silvie Angeline', '3795399302099930', 'Bandung ', '2021-02-20', 2, 'P', 1),
+(5, 'Silvie Angeline', '3795399302099930', 'Bandung  ', '2021-02-20', 2, 'P', 4),
 (6, 'Rajwa', '3785532893992982', 'Bandung', '2021-01-06', 3, 'L', 5),
-(7, 'Tessia', '3788433829229019', 'Bandung ', '2021-01-05', 4, 'P', 4);
+(7, 'Tessia', '3788433829229019', 'Bandung ', '2021-01-05', 4, 'P', 4),
+(8, 'Bayu', '867768393839738993', 'Bandung ', '2021-02-11', 1, 'L', 3),
+(9, 'Eka', '837373848383', 'Cimahi', '2020-03-30', 2, 'P', 7),
+(10, 'ferdi', '32145674382938', 'Bandung', '2022-07-05', 3, 'L', 4);
 
 -- --------------------------------------------------------
 
@@ -92,13 +94,14 @@ CREATE TABLE `ref_ibu` (
 --
 
 INSERT INTO `ref_ibu` (`id_ibu`, `nama_ibu`, `nik_ibu`, `alamat_ibu`, `no_telp_ibu`, `foto_ibu`) VALUES
-(1, 'Violet Aprillia', '3785922890392029', 'Jl. Cibaduyut Raya', '089655784438', NULL),
-(2, 'Farida Zahra', '3785322893902983', 'Jl. Moh Toha', '089766424694', NULL),
-(3, 'Indriani Kurnia', '3704922939904984', 'Jl. Astana Anyar', '089755894390', NULL),
+(2, 'Farida Zahra', '3785322893902983', 'Jl. Moh Toha ', '089766424691', NULL),
+(3, 'Indriani Kurnia Sari', '3704922939904984', 'Jl. Astana Anyar ', '089755894390', NULL),
 (4, 'Anisa Aulia', '3784333920298398', 'Jl. Cibaduyut Raya', '089644893828', NULL),
 (5, 'Virgiva Nazwa', '3785433892839093', 'Jl. Cibaduyut Raya  ', '089644893022', NULL),
 (6, 'Haryani', '192011919321', 'Komplek Dodo Regency No.69', '0812345678987', NULL),
-(7, 'Wanda Caterine', '3722811902093992', 'Jl. Antapani', '089644390902', NULL);
+(7, 'Wanda Caterine', '3722811902093992', 'Jl. Antapani Lama ', '089644390902', NULL),
+(8, 'Selviani', '3207072711000001', 'Jl. Antapani Lama', '08953384879797', NULL),
+(9, 'komar', '320707271100000122', 'citayem', '0812928192819', NULL);
 
 -- --------------------------------------------------------
 
@@ -112,7 +115,6 @@ CREATE TABLE `ref_imunisasi` (
   `usia_saat_vaksin` int(2) NOT NULL,
   `tinggi_badan` int(3) NOT NULL,
   `berat_badan` int(3) NOT NULL,
-  `periode` varchar(255) NOT NULL,
   `id_vaksin` varchar(255) DEFAULT NULL,
   `id_anak` int(11) DEFAULT NULL,
   `id_petugas` int(11) DEFAULT NULL,
@@ -123,9 +125,9 @@ CREATE TABLE `ref_imunisasi` (
 -- Dumping data for table `ref_imunisasi`
 --
 
-INSERT INTO `ref_imunisasi` (`id_imunisasi`, `tgl_imunisasi`, `usia_saat_vaksin`, `tinggi_badan`, `berat_badan`, `periode`, `id_vaksin`, `id_anak`, `id_petugas`, `id_ibu`) VALUES
-(2, '2021-04-21', 4, 43, 23, '3 bulan', 'DPT 2 + Polio 3', 3, 1, 5),
-(3, '2021-04-21', 3, 54, 42, '0-7 hari', 'HB', 5, 1, 3);
+INSERT INTO `ref_imunisasi` (`id_imunisasi`, `tgl_imunisasi`, `usia_saat_vaksin`, `tinggi_badan`, `berat_badan`, `id_vaksin`, `id_anak`, `id_petugas`, `id_ibu`) VALUES
+(5, '2022-07-31', 1, 50, 0, '', 4, 2, 3),
+(6, '2022-07-31', 1, 50, 15, '13', 4, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -172,7 +174,6 @@ CREATE TABLE `ref_petugas` (
 --
 
 INSERT INTO `ref_petugas` (`id_petugas`, `nama_petugas`, `jabatan_petugas`, `jk_petugas`, `tempat_lahir_petugas`, `tgl_lahir_petugas`, `alamat_petugas`, `no_telp_petugas`, `foto_petugas`, `status_petugas`) VALUES
-(1, 'Angga Cahya', 'Petugas 1', 'L', 'Bandung', '1988-06-19', 'Jl. Leuwi Panjang', '089319092891', NULL, 'Aktif'),
 (2, 'Kevin Farel', 'Petugas 2', 'L', 'Bandung', '1983-05-19', 'Jl. Buah Batu', '089319902737', NULL, 'Aktif'),
 (3, 'Arya Permana', 'Ketua Pokja 1', 'L', 'Jakarta', '1987-10-20', 'Jl. Cibaduyut Raya', '089643392093', NULL, 'Aktif'),
 (4, 'Supriadi Armalawi', 'Ketua Pokja 2', 'L', 'Jakarta', '1988-10-21', 'Jl. Moh.toha', '089333902209 ', NULL, 'Pasif');
@@ -192,6 +193,15 @@ CREATE TABLE `ref_posyandu` (
   `kota_kab_posyandu` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ref_posyandu`
+--
+
+INSERT INTO `ref_posyandu` (`id_posyandu`, `nama_posyandu`, `alamat_posyandu`, `kel_posyandu`, `kec_posyandu`, `kota_kab_posyandu`) VALUES
+(1, 'Posyandu Ceria', 'Sekeloa No 21', 'Sekeloa ', 'Coblong', 'Bandung'),
+(2, 'Posyandu Ceria 2', 'Sekeloa', 'Sekeloa', 'Coblong', 'Bandung'),
+(3, 'Posyandu Ceria ikeh', 'citayem pasionn', 'asgard', 'zeus', 'pgsoft');
+
 -- --------------------------------------------------------
 
 --
@@ -208,10 +218,6 @@ CREATE TABLE `ref_vaksin` (
 --
 
 INSERT INTO `ref_vaksin` (`id_vaksin`, `nama_vaksin`) VALUES
-(1, 'HB'),
-(2, 'BCG'),
-(3, 'DPT 1'),
-(4, 'DPT 2'),
 (5, 'DPT 3'),
 (6, 'IPV'),
 (7, 'MR'),
@@ -220,7 +226,9 @@ INSERT INTO `ref_vaksin` (`id_vaksin`, `nama_vaksin`) VALUES
 (10, 'Polio 1'),
 (11, 'Polio 2'),
 (12, 'Polio 3'),
-(13, 'Polio 4');
+(13, 'Polio 4'),
+(14, 'Sinovac'),
+(15, 'sinoo');
 
 --
 -- Indexes for dumped tables
@@ -282,7 +290,7 @@ ALTER TABLE `ref_vaksin`
 -- AUTO_INCREMENT for table `ref_anak`
 --
 ALTER TABLE `ref_anak`
-  MODIFY `id_anak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_anak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ref_bantuan`
@@ -294,13 +302,13 @@ ALTER TABLE `ref_bantuan`
 -- AUTO_INCREMENT for table `ref_ibu`
 --
 ALTER TABLE `ref_ibu`
-  MODIFY `id_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_ibu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ref_imunisasi`
 --
 ALTER TABLE `ref_imunisasi`
-  MODIFY `id_imunisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_imunisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ref_login`
@@ -318,13 +326,13 @@ ALTER TABLE `ref_petugas`
 -- AUTO_INCREMENT for table `ref_posyandu`
 --
 ALTER TABLE `ref_posyandu`
-  MODIFY `id_posyandu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_posyandu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ref_vaksin`
 --
 ALTER TABLE `ref_vaksin`
-  MODIFY `id_vaksin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_vaksin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
