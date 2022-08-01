@@ -145,9 +145,7 @@
 					"nama_vaksin" : nama_vaksin,
 					"nama_ibu" : nama_ibu
 				};	
-
 				
-   
     			$("#loading").show();
     			$.ajax({
     			type : "POST",

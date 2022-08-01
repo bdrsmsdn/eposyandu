@@ -55,7 +55,7 @@
 
         $imunisasi->read_one();
 
-        if($imunisasi->id_imunisasi != null){
+        if($imunisasi->tgl_imunisasi != null){
             // create array
             $imunisasi_arr = array(
                 "id_imunisasi" =>  $imunisasi->id_imunisasi,

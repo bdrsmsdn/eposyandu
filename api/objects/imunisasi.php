@@ -96,13 +96,11 @@
             $this->tgl_imunisasi = $row['tgl_imunisasi'];
             $this->usia_saat_vaksin = $row['usia_saat_vaksin'];
             $this->tinggi_badan = $row['tinggi_badan'];
-            $this->berat_badan_umur = $row['berat_badan_umur'];
-            $this->berat_badan_berdiri = $row['berat_badan_berdiri'];
-            $this->berat_badan_terlentang = $row['berat_badan_terlentang'];
-			$this->nama_anak = $row['id_anak'];
-			$this->nama_petugas = $row['id_petugas'];
-			$this->nama_vaksin = $row['id_vaksin'];
-			$this->nama_ibu = $row['id_ibu'];
+            $this->berat_badan = $row['berat_badan'];
+			$this->nama_anak = $row['nama_anak'];
+			$this->nama_petugas = $row['nama_petugas'];
+			$this->nama_vaksin = $row['nama_vaksin'];
+			$this->nama_ibu = $row['nama_ibu'];
         }
 
 		public function update(){
