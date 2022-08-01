@@ -12,7 +12,7 @@ class History{
 			$this->conn = $db;
 		}
 		public function readHistory(){
-			$query = "SELECT tgl_imunisasi, id_vaksin FROM $this->table_nama WHERE id_anak= '$this->id_anak'";
+			$query = "SELECT $this->table_nama.tgl_imunisasi, ref_vaksin.nama_vaksin FROM $this->table_nama LEFT JOIN ref_vaksin ON $this->table_nama.id_vaksin = ref_vaksin.id_vaksin WHERE id_anak= '$this->id_anak'";
 
 			$stmt = $this->conn->prepare($query);
 			$stmt->execute();

@@ -30,7 +30,7 @@
 
                 $history=array(
                         "tgl_imunisasi"=>$tgl_imunisasi,
-                        "id_vaksin"=>$id_vaksin
+                        "nama_vaksin"=>$nama_vaksin
                 );
                 array_push($history_arr["records"], $history);
 			}

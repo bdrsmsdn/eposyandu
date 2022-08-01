@@ -69,28 +69,6 @@
                 <label for="status_petugas" id="label">Status Petugas</label>
                 <input type="text" class="form-control" id="status_petugas">
             </div>
-	<!-- <form id="formnik">
-	<center>
-        <fieldset>
-            <legend>Tambah Data Petugas</legend>
-            <br><br><br> 
-        Nama Petugas :<br> 
-        <input type="text" id="nama_petugas"><p>
-        Jabatan Petugas :<br> 
-        <input type="text" id="jabatan_petugas"><p> 
-        Jenis Kelamin Petugas :<br>
-        <input type="radio" value="L" id="laki" name="jk_petugas">Laki - Laki<p>
-        <input type="radio" value="P" id="perempuan" name="jk_petugas">Perempuan<p>
-        Tempat Lahir Petugas : <br>
-        <input type="text" id="tempat_lahir_petugas"><p>
-        Tanggal Lahir : <br> 
-        <input type="date" id="tgl_lahir_petugas" size="30"><p>
-        Alamat Petugas : <br>
-        <input type="text" id="alamat_petugas"><p>
-        No Telepon Petugas : <br>
-        <input type="text" id="no_telp_petugas"><p>
-        Status Petugas :<br>
-        <input type="text" id="status_petugas"><p> -->
         <div class="form-group row">
         <button onclick="window.location.href='crudpetugas.php'" type="button" class="btn btn-success col-form">KEMBALI</button>
         <button type="button" id="bttambah" class="btn btn-success col-form">TAMBAH</button>
@@ -112,7 +90,7 @@
             
 			$("#bttambah").click(function(){ 
                 $("#status").html("lagi diproses");
-				$$("#bttambah").prop("disabled", true);
+				$("#bttambah").prop("disabled", true);
                 
 				//ambil nilai-nilai dari masing-masing input 
 				nama_petugas = $("#nama_petugas").val();

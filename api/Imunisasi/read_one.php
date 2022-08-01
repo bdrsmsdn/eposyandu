@@ -41,23 +41,28 @@
         }
     }
 
+    else if ($func_imunisasi == "ambil_option_vaksin"){
+        $option = $db->query("SELECT id_vaksin, nama_vaksin FROM ref_vaksin");
+        echo "<option> PILIH NAMA VAKSIN </option>\n";
+        while ($row = $option->fetch(PDO::FETCH_ASSOC)){
+            echo "<option value='". $row['id_vaksin']. "'>". $row['nama_vaksin']. "</option>\n";
+        }
+    }
+
     else if ($func_imunisasi == "ambil_single_data"){
         // set ID property of record to read
         $imunisasi->id_imunisasi = isset($_GET['id_imunisasi']) ? $_GET['id_imunisasi'] : die();
 
         $imunisasi->read_one();
 
-        if($imunisasi->tgl_imunisasi != null){
+        if($imunisasi->id_imunisasi != null){
             // create array
             $imunisasi_arr = array(
                 "id_imunisasi" =>  $imunisasi->id_imunisasi,
                 "tgl_imunisasi" => $imunisasi->tgl_imunisasi,
                 "usia_saat_vaksin" => $imunisasi->usia_saat_vaksin,
                 "tinggi_badan" => $imunisasi->tinggi_badan,
-                "berat_badan_umur" => $imunisasi->berat_badan_umur,
-                "berat_badan_berdiri" => $imunisasi->berat_badan_berdiri,
-                "berat_badan_terlentang" => $imunisasi->berat_badan_terlentang,
-                "periode" => $imunisasi->periode,
+                "berat_badan" => $imunisasi->berat_badan,
                 "nama_anak" => $imunisasi->nama_anak,
                 "nama_petugas" => $imunisasi->nama_petugas,
                 "nama_vaksin" => $imunisasi->nama_vaksin,

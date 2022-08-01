@@ -72,23 +72,6 @@
                         </form>
                     </fieldset>
                </table>
-                <!-- Nama Anak :<br> 
-                <input type="text" id="nama_anak"><p>
-                NIK Anak  :<br> 
-                <input type="text" id="nik_anak"><p> 
-                Tempat Lahir :<br> 
-                <input type="text" id="tempat_lahir_anak"><p> 
-                Tanggal Lahir : (YYYY/MM/DD)<br> 
-                <input type="date" id="tgl_lahir_anak" size="30"><p>
-                Usia :<br>
-                <input type="text" id="usia_anak"><p>
-                Jenis Kelamin :<br>
-                <input type="radio" value="L" id="laki" name="jk_anak">Laki - Laki<p>
-                <input type="radio" value="P" id="perempuan" name="jk_anak">Perempuan<p>
-                <button type="button" id="tupdate">UPDATE</button> 
-                    <button onclick="window.location.href='crudAnak.php'" type="button"> KEMBALI </button>
-                    <span id="status"></span> -->
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script type="text/javascript">
@@ -103,8 +86,6 @@
 
     $(document).ready(function () {
         $(document).ready(function(){
-
-            //$("#id_imun").load("prosesCrudImunisasi.php", "func_imun=ambil_data_imun");
             $("#id_ibu").load("../api/Anak/read_one.php", "func_anak=ambil_option_ibu");
 
             $.ajax({
@@ -152,8 +133,6 @@
                 tgl_lahir_anak = $("#tgl_lahir_anak").val();
                 usia_anak = $("#usia_anak").val();
                 jk_anak = $("#jk_anak").val();
-
-                //data = "&tgl_imun="+tgl_imun+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan="+berat_badan+"&periode="+periode;
                 data_anak = {
                     "nik_anak" : nik_anak,
                     "nama_anak" : nama_anak,

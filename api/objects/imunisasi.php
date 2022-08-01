@@ -62,20 +62,6 @@
 						$this->tinggi_badan', '$this->berat_badan', '$this->nama_vaksin', '$this->nama_anak', '$this->nama_petugas', '$this->nama_ibu')";
 		 	// prepare query
 			$stmt = $this->conn->prepare($query);
-			
-			// sanitize
-			// $this->tgl_imunisasi=htmlspecialchars(strip_tags($data['tgl_imunisasi']));
-			// $this->usia_saat_vaksin=htmlspecialchars(strip_tags($data['usia_saat_vaksin']));
-			// $this->tinggi_badan=htmlspecialchars(strip_tags($data['tinggi_badan']));
-			// $this->berat_badan=htmlspecialchars(strip_tags($data['berat_badan']));
-			// $this->periode=htmlspecialchars(strip_tags($data['periode']));
-		  
-			// bind values
-			// $stmt->bindParam(":tgl_imunisasi", $this->tgl_imunisasi);
-			// $stmt->bindParam(":usia_saat_vaksin", $this->usia_saat_vaksin);
-			// $stmt->bindParam(":tinggi_badan", $this->tinggi_badan);
-			// $stmt->bindParam(":berat_badan", $this->berat_badan);
-			// $stmt->bindParam(":periode", $this->periode);
 		  
 			// execute query
 			if($stmt->execute()){

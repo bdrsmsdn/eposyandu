@@ -103,7 +103,7 @@
                             const element = data[index];
                             content += "<tr>";
                             content += "<td>" + element.tgl_imunisasi + "</td>";
-                            content += "<td>" + element.id_vaksin + "</td>";
+                            content += "<td>" + element.nama_vaksin + "</td>";
                             content += "</tr>";
                         }
                         $("#content").html(content);

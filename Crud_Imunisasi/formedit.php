@@ -51,31 +51,14 @@
 			</div>
 
 			<div class="form-group">
-				<label for="berat_badan_umur" id="label">Berat badan</label>
-				<input type="text" class="form-control" id="berat_badan_umur">
+				<label for="berat_badan" id="label">Berat badan</label>
+				<input type="text" class="form-control" id="berat_badan">
 			</div>
 
 			<div class="form-group">
 				<label for="nama_vaksin" id="label">Nama Vaksin</label>
-				<input type="text" class="form-control" id="nama_vaksin">
+				<select type="form-control" class="form-control" id="nama_vaksin"></select>
 			</div>
-
-	<!-- <form>
-		<center>
-        <fieldset>
-            <legend>Edit Data Imunisasi</legend>
-            <br><br><br> 
-		Tanggal Imunisasi :<br> 
-		<input type="date" id="tgl_imunisasi"><p>
-		Usia Saat Vaksin : <br>
-		<input type="text" id="usia_saat_vaksin"><p>
-		Tinggi Badan : <br>
-		<input type="text" id="tinggi_badan"><p>
-		Berat Badan : <br>
-		<input type="text" id="berat_badan_umur"><p>
-		Periode : <br>
-		<input type="text" id="periode"><p>
- -->
  	<div class="form-group row">
 		<button onclick="window.location.href='crudImunisasi.php'" type="button" class="btn btn-success col-form"> KEMBALI </button>
 		<button id="tupdate" type="button" class="btn btn-success col-form"> PERBARUI </button>
@@ -89,20 +72,19 @@
     var nama_anak;
     var nama_petugas;
     var nama_vaksin;
+	var nama_ibu;
     var tgl_imunisasi;
     var tinggi_badan;
     var berat_badan;
     var usia_saat_vaksin;
-    var periode;
     var imunisasi;
 
     $(document).ready(function () {
     	$(document).ready(function(){
-
-    		//$("#id_imun").load("prosesCrudImunisasi.php", "func_imunisasi=ambil_data_imun");
 			$("#nama_anak").load("../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_anak");
 			$("#nama_petugas").load("../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_petugas");
 			$("#nama_ibu").load("../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_ibu");
+			$("#nama_vaksin").load("../api/Imunisasi/read_one.php", "func_imunisasi=ambil_option_vaksin");
 			
 			$.ajax({
 					type : "GET",
@@ -126,7 +108,7 @@
 						$("#tgl_imunisasi").val(tgl_imunisasi);
 						$("#usia_saat_vaksin").val(usia_saat_vaksin);
 						$("#tinggi_badan").val(tinggi_badan);
-						$("#berat_badan_umur").val(berat_badan);
+						$("#berat_badan").val(berat_badan);
 						$("#nama_anak").val(nama_anak);
 						$("#nama_petugas").val(nama_petugas);
 						$("#nama_vaksin").val(nama_vaksin);
@@ -153,8 +135,6 @@
     			usia_saat_vaksin = $("#usia_saat_vaksin").val();
     			tinggi_badan = $("#tinggi_badan").val();
     			berat_badan = $("#berat_badan").val();
-
-    			//data = "&tgl_imunisasi="+tgl_imunisasi+"&usia_saat_vaksin="+usia_saat_vaksin+"&tinggi_badan="+tinggi_badan+"&berat_badan_umur="+berat_badan_umur+"&periode="+periode;
 				imunisasi = {
 					"tgl_imunisasi" : tgl_imunisasi,
 					"usia_saat_vaksin" : usia_saat_vaksin,
